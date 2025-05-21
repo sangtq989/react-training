@@ -1,6 +1,7 @@
 // import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch.tsx';
+import React from 'react';
 
 interface User {
     id: string;
@@ -35,7 +36,7 @@ const HomePage = () => {
     }
     
     return (
-        <>
+        <React.Fragment>
             <div
                 className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
                 <div className="w-full mb-1">
@@ -199,7 +200,7 @@ const HomePage = () => {
                                     className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                                 {
                                     users?.map((user) => (
-                                        <tr className="hover:bg-gray-100 dark:hover:bg-gray-700">
+                                        <tr key={user.id} className="hover:bg-gray-100 dark:hover:bg-gray-700">
                                             <td className="w-4 p-4">
                                                 <div className="flex items-center">
                                                     <input
@@ -296,8 +297,6 @@ const HomePage = () => {
                                         </tr>
                                     ))
                                 }
-
-
                                 </tbody>
                             </table>
                         </div>
@@ -358,7 +357,7 @@ const HomePage = () => {
                 </div>
             </div>
 
-        </>
+        </React.Fragment>
     )
 }
 

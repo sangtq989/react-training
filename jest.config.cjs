@@ -12,5 +12,4 @@ module.exports = {
     ],
     coverageDirectory: "coverage", // folder to output coverage reports
     coverageReporters: ["text", "lcov"], // formats: text in console, lcov for HTML reports
-
 };
